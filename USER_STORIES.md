@@ -11,7 +11,11 @@ Acceptance Criteria:
 * User enters a name, ingredients, instructions, and notes
 * New recipe is saved to the database
 
-Usage example: ./recipes select option 1
+Usage example:
+
+      run ./recipes
+      press 1 to select "Create New Recipe"
+      enter the appropriate information as prompted
 
 ## User views current recipes
 
@@ -21,9 +25,14 @@ I want to select the view recipes option from the main menu
 
 Acceptance Criteria:
 * User selects the view recipes option from the main menu
-* Recipes currently in the database are displayed
+* Recipes currently in the database are displayed by their name
 
-Usage example: ./recipes select option 2
+Usage example:
+
+      run ./recipes
+      press 2 to select "View Current Recipes"
+      press the number of the recipe you want to view
+      recipe name, ingredients, instructions, and notes are displayed
 
 ## User enters an ingredient to get recipes using that ingredient
 
@@ -35,7 +44,12 @@ Acceptance Criteria:
 * User selects the enter ingredient option from the main menu
 * User enters an ingredient and a list of recipes using that ingredient is displayed
 
-Usage example: ./recipes select option 3
+Usage example:
+
+      run ./recipes
+      press 3 to select "Find Recipes By Ingredient"
+      press the number of the recipe you want to view
+      recipe name, ingredients, instructions, and notes are displayed
 
 ## User edits a recipe
 
@@ -49,16 +63,26 @@ Acceptance Criteria:
 * The user is able to edit the recipe
 * The recipe is saved with the new information in the database
 
-Usage example: ./recipes select option 4
+Usage example:
 
-## User rates a recipe
+      run ./recipes
+      press 4 to select "Edit A Recipe"
+      press the number of the recipe you want to edit
+      edit the things you want and save
+
+## User makes notes about a recipe
 
 As a user
-In order to let other people know how a recipe is
-I want to be able to give the recipe a rating
+In order to make a recipe better for the next time I make it
+I want to be able to make notes about that recipe
 
 Acceptance Criteria
-* A user can leave a comment about a recipe
-* A user can leave a star rating on a recipe
+* A user can select a recipe and leave notes about that recipe
+* The recipe is saved with the new information in the database
 
-Usage example: ./recipes select option 4
+Usage example:
+
+      run ./recipes
+      press 4 to select "Edit A Recipe"
+      press the number of the recipe you want to edit
+      add notes to the recipe and save
