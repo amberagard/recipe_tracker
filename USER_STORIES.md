@@ -11,6 +11,8 @@ Acceptance Criteria:
 * User enters a name, ingredients, instructions, and notes
 * New recipe is saved to the database
 
+Usage example: ./recipes select option 1
+
 ## User views current recipes
 
 As a user
@@ -21,6 +23,8 @@ Acceptance Criteria:
 * User selects the view recipes option from the main menu
 * Recipes currently in the database are displayed
 
+Usage example: ./recipes select option 2
+
 ## User enters an ingredient to get recipes using that ingredient
 
 As a user
@@ -30,6 +34,8 @@ I want to to be able to enter an ingredient and get a list of recipes that use t
 Acceptance Criteria:
 * User selects the enter ingredient option from the main menu
 * User enters an ingredient and a list of recipes using that ingredient is displayed
+
+Usage example: ./recipes select option 3
 
 ## User edits a recipe
 
@@ -43,6 +49,8 @@ Acceptance Criteria:
 * The user is able to edit the recipe
 * The recipe is saved with the new information in the database
 
+Usage example: ./recipes select option 4
+
 ## User rates a recipe
 
 As a user
@@ -52,3 +60,5 @@ I want to be able to give the recipe a rating
 Acceptance Criteria
 * A user can leave a comment about a recipe
 * A user can leave a star rating on a recipe
+
+Usage example: ./recipes select option 4
