@@ -19,6 +19,7 @@ ______              _                  _____                     _
 \_| \_| \___| \___||_|| .__/  \___|     \_/  |_|    \__,_| \___||_|\_\ \___||_|
                       | |
                       |_|
+
 Select an option from the choices below:
 1. Create new recipe
 2. View current recipes

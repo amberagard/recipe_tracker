@@ -16,8 +16,8 @@ RSpec.describe "Creating a new recipe", :integration do
   end
 
   context "invalid input" do
-    let(:long_string){ "foo" * 20 }
-    let!(:output){ run_recipe_tracker_with_input(1, "Chicken Alfredo", long_string) }
+    let(:long_string){ "foo" * 21 }
+    let!(:output){ run_recipe_tracker_with_input(1, long_string) }
 
     it "prints the error message for the type of invalid input" do
       expect(output).to include("Name must be less than 60 characters")

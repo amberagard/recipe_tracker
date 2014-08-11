@@ -6,7 +6,8 @@ class RecipesController
     if recipe.new_record?
       puts recipe.errors.full_messages
     else
-      puts "#{name} has been added to your list of recipes"
+      ingredient_controller()
+      puts "#{name} has been added to your recipes."
     end
   end
 
@@ -17,7 +18,7 @@ class RecipesController
     recipes.each_with_index do |recipe, index|
       puts "#{index + 1}. #{recipe.name}"
     end
-    Router.navigate_recipes_menu(self)
+  #  Router.navigate_recipes_menu(self)
   end
 
   def view(path_number)
