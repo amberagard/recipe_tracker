@@ -4,13 +4,20 @@ class IngredientsController
   end
 
   def add
-    puts "Do you want to add an ingredient?"
-    name = clean_gets
-    ingredient = Ingredient.create(name: name, recipe: @origin_recipe)
-    if ingredient.new_record?
-      puts ingredient.errors.full_messages
-    else
-      puts "#{name} as been added to the #{@origin_recipe.name} recipe."
+    puts Ingredient.options
+    answer = clean_gets
+    if answer == "1"
+      puts "Ingredient name: "
+      name = clean_gets
+      puts "Ingredient amount: "
+      amount = clean_gets
+      ingredient = Ingredient.create(name: name, recipe: @origin_recipe, amount: amount)
+      if ingredient.valid?
+        puts "#{name} as been added to the #{@origin_recipe.name} recipe."
+        add
+      else
+        puts ingredient.errors.full_messages
+      end
     end
   end
 

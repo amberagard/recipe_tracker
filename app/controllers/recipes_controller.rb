@@ -6,7 +6,8 @@ class RecipesController
     if recipe.new_record?
       puts recipe.errors.full_messages
     else
-      ingredient_controller()
+      IngredientsController.new(recipe).add
+      InstructionsController.new(recipe).add
       puts "#{name} has been added to your recipes."
     end
   end
@@ -18,15 +19,18 @@ class RecipesController
     recipes.each_with_index do |recipe, index|
       puts "#{index + 1}. #{recipe.name}"
     end
-  #  Router.navigate_recipes_menu(self)
   end
 
   def view(path_number)
 
-    puts "Please select a recipe you would like to view:"
-    recipe = recipe[path_number - 1]
+    recipe = recipes[path_number - 1]
     if recipe
-      puts "Here is the recipe you selected:"
+      puts "Here is the recipe for #{recipe.name}:"
+      # puts recipe.name
+      recipe.ingredients.each_with_index do |ingredient, index|
+        puts "#{index + 1}. #{ingredient.amount} #{ingredient.name}"
+      end
+      puts recipe.instruction.body
     else
       puts "Sorry, recipe #{path_number} doesn't exist"
     end
@@ -35,12 +39,12 @@ class RecipesController
   def search
     puts "Please enter an ingredient you would like to search by:"
     name = clean_gets
-    puts "Here is a list of recipes that include the ingredient you specified:"
+    puts "Here is a list of recipes that include #{ingredient.name}:"
   end
 
   def edit
     puts "Please select a recipe you would like to edit:"
-    recipe = recipe[path_number - 1]
+    recipe = recipes[path_number - 1]
     if recipe
       puts "Here is the recipe you selected:"
     else

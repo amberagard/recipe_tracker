@@ -20,8 +20,7 @@ ActiveRecord::Schema.define(version: 20140808133500) do
   end
 
   create_table "instructions", force: true do |t|
-    t.text    "name"
-    t.string  "time"
+    t.text    "body"
     t.integer "recipe_id"
   end
 

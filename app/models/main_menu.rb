@@ -20,13 +20,15 @@ Select an option from the choices below:
       recipe_controller.add
     elsif input == "2"
       recipe_controller.list
-      selction = gets
-      recipe_controller.view(selection)
+      puts "Please select a recipe you would like to view:"
+      recipe = clean_gets.to_i
+      recipe_controller.view(recipe)
     elsif input == "3"
       recipe_controller.search
     elsif input == "4"
       recipe_controller.edit
-    else puts "'#{input}' is not a valid selection."
+    else
+      puts "'#{input}' is not a valid selection."
       self.selection
     end
   end

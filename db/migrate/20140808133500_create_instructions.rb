@@ -1,8 +1,7 @@
 class CreateInstructions < ActiveRecord::Migration
   def change
     create_table :instructions do |i|
-      i.text :name
-      i.string :time
+      i.text :body
       i.references :recipe
     end
   end

@@ -1,6 +1,6 @@
 class Recipe < ActiveRecord::Base
   has_many :ingredients
-  has_many :instructions
+  has_one :instruction
 
   validates_format_of :name, with: /[a-zA-Z]/, message: "must include letters"
   validates_length_of :name, maximum: 60, message: "must be less than 60 characters"
