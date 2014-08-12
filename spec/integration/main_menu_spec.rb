@@ -24,7 +24,6 @@ Select an option from the choices below:
 1. Create new recipe
 2. View current recipes
 3. Find recipes by ingredient
-4. Edit a recipe
 }
       expect(actual).to include(expected)
     end
@@ -54,13 +53,6 @@ Select an option from the choices below:
       let(:output){ run_recipe_tracker_with_input("3") }
       it "should print" do
         expect(output).to include("Please enter an ingredient you would like to search by:")
-      end
-    end
-
-    context "the user selects 4" do
-      let(:output){ run_recipe_tracker_with_input("4") }
-      it "should print" do
-        expect(output).to include("Please select a recipe you would like to edit:")
       end
     end
   end

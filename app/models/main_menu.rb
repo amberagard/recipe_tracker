@@ -5,7 +5,6 @@ Select an option from the choices below:
 1. Create new recipe
 2. View current recipes
 3. Find recipes by ingredient
-4. Edit a recipe
 }
   end
 
@@ -20,13 +19,10 @@ Select an option from the choices below:
       recipe_controller.add
     elsif input == "2"
       recipe_controller.list
-      puts "Please select a recipe you would like to view:"
       recipe = clean_gets.to_i
       recipe_controller.view(recipe)
     elsif input == "3"
       recipe_controller.search
-    elsif input == "4"
-      recipe_controller.edit
     else
       puts "'#{input}' is not a valid selection."
       self.selection

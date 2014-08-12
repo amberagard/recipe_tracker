@@ -8,7 +8,7 @@ class InstructionsController
     body = clean_gets
     instruction = Instruction.create(body: body, recipe: @origin_recipe)
     unless instruction.valid?
-      add
+      Menu.selection
     end
   end
 end

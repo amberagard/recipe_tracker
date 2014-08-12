@@ -16,6 +16,7 @@ class RecipesController
     puts "~~~~~~~"
     puts "RECIPES"
     puts "~~~~~~~"
+    puts "Please select a recipe you would like to view:"
     recipes.each_with_index do |recipe, index|
       puts "#{index + 1}. #{recipe.name}"
     end
@@ -25,7 +26,6 @@ class RecipesController
     recipe = recipes[path_number - 1]
     if recipe
       puts "Here is the recipe for #{recipe.name}:"
-      # puts recipe.name
       recipe.ingredients.each_with_index do |ingredient, index|
         puts "#{index + 1}. #{ingredient.amount} #{ingredient.name}"
       end
@@ -37,25 +37,12 @@ class RecipesController
 
   def search
     puts "Please enter an ingredient you would like to search by:"
-    name = clean_gets
-    ingredient = Ingredient.where(name: name).each do |ingredient|
-      recipes << ingredient.recipe
-    end
+    name = clean_gets.downcase
     puts "Here is a list of recipes that include #{name}:"
-    recipes.each_with_index do |recipe, index|
-      puts "#{index + 1}. #{recipe.name}"
+    ingredient = Ingredient.where(name: name).each_with_index do |ingredient, index|
+      puts "#{index + 1}. #{ingredient.recipe.name}"
     end
-
-  end
-
-  def edit
-    puts "Please select a recipe you would like to edit:"
-    recipe = recipes[path_number - 1]
-    if recipe
-      puts "Here is the recipe you selected:"
-    else
-      puts "Sorry, recipe #{path_number} doesn't exist"
-    end
+    Menu.selection
   end
 
   def recipes
