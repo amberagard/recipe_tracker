@@ -14,10 +14,10 @@ class IngredientsController
       ingredient = Ingredient.create(name: name, recipe: @origin_recipe, amount: amount)
       if ingredient.valid?
         puts "#{name} as been added to the #{@origin_recipe.name} recipe."
-        add
       else
         puts ingredient.errors.full_messages
       end
+      add
     end
   end
 
