@@ -22,7 +22,6 @@ class RecipesController
   end
 
   def view(path_number)
-
     recipe = recipes[path_number - 1]
     if recipe
       puts "Here is the recipe for #{recipe.name}:"
@@ -39,7 +38,14 @@ class RecipesController
   def search
     puts "Please enter an ingredient you would like to search by:"
     name = clean_gets
-    puts "Here is a list of recipes that include #{ingredient.name}:"
+    ingredient = Ingredient.where(name: name).each do |ingredient|
+      recipes << ingredient.recipe
+    end
+    puts "Here is a list of recipes that include #{name}:"
+    recipes.each_with_index do |recipe, index|
+      puts "#{index + 1}. #{recipe.name}"
+    end
+
   end
 
   def edit
